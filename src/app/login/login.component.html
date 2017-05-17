@@ -3,21 +3,22 @@
   <h1>Please log in to view your dashboard</h1>
 
   <form class="col-sm-12" [formGroup]="login" (ngSumbit)="onSumbit(login.value)">
+
     <div class="form-group">
       <label for="Email"></label>
       <input type="email"
-            class="form-control"
-            id="email"
-            ng-model
-            placeholder="EMAIL ADDRESS">
+             class="form-control"
+             id="email"
+             ng-model
+             placeholder="EMAIL ADDRESS">
     </div>
 
     <div class="form-group">
       <label for="Password"></label>
       <input type="password"
-            class="form-control"
-            id="password"
-            placeholder="PASSWORD">
+             class="form-control"
+             id="password"
+             placeholder="PASSWORD">
     </div>
 
     <button type="submit" class="btn col-sm-12">LOG IN</button>
