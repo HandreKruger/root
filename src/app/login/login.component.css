@@ -1,0 +1,29 @@
+h1{
+    font-family: Arial;
+    font-size: 25px;
+    text-align: center;
+}
+
+input{
+    height: 50px;
+    text-align: center;
+    color: grey;
+    font-size: 15px;
+    opacity: .3;
+    border-radius: 8px;
+}
+
+.btn{
+    background-color: #8CC63E;
+    color: white;
+    border: none;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.btn :hover{
+    background-color: white;
+    color: #8CC63E;
+    border: 1px solid #8CC63E;
+}
