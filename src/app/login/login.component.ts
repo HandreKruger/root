@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
-import { HttpService } from '../http.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,22 +10,14 @@ import { HttpService } from '../http.service';
 })
 export class LoginComponent {
 
-  login: FormGroup;
+constructor(private authService: AuthService) {
+    }
 
-  constructor( private formBuilder: FormBuilder, private httpService: HttpService) {
-
-    this.login = formBuilder.group({
-      email: new FormControl (''),
-      password: new FormControl (''),
-      });
-  }
-
-  onsubmit() {
-    this.httpService.sendData(this.login.value)
+   onSignin(form: NgForm) {
+     this.authService.signin(form.value.email, form.value.password)
       .subscribe(
-        user => console.log(user)
+        tokenData => console.log(tokenData),
+        error => console.log(error)
       );
   }
-
-
 }

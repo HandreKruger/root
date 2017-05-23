@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule   } from '@angular/forms';
-import { HttpModule, JsonpModule } from '@angular/http';
+import { FormsModule   } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -9,7 +9,11 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { appRoutes } from './app.routes';
-import { HttpService } from './http.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateComponent } from './create/create.component';
+
+import { HttpService } from './services/http.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -17,16 +21,16 @@ import { HttpService } from './http.service';
     HeaderComponent,
     LoginComponent,
     HomeComponent,
+    DashboardComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
     HttpModule,
-    JsonpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [HttpService],
+  providers: [HttpService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

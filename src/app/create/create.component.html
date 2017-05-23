@@ -1,0 +1,81 @@
+<div class="container col-sm-4 offser-sm-6">
+  <h1>Create User</h1>
+
+  <form #createForm="ngForm" (ngSubmit)="onCreate(createForm)">
+
+    <div class="form-group">
+      <label for="firstName"></label>
+      <input id="firstName"
+             type="text"
+             class="form-control"
+             [(ngModel)]="firstName"
+             name="firstName"
+             placeholder="NAME">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName"></label>
+      <input id="lastName"
+             type="text"
+             class="form-control"
+             [(ngModel)]="lastName"
+             name="lastName"
+             placeholder="SURNAME">
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber"></label>
+      <input id="phoneNumber"
+             type="text"
+             class="form-control"
+             [(ngModel)]="phoneNumber"
+             name="phoneNumber"
+             placeholder="PHONE NUMBER">
+    </div>
+
+    <div class="form-group">
+      <label for="Email"></label>
+      <input id="email"
+             type="email"
+             class="form-control"
+             [(ngModel)]="email"
+             name="email"
+             placeholder="EMAIL">
+    </div>
+
+    <div class="form-group">
+      <label for="Password"></label>
+      <input id="password"
+             type="password"
+             class="form-control"
+             [(ngModel)]="password"
+             name="password"
+             placeholder="PASSWORD">
+    </div>
+
+    <div class="form-group">
+      <label for="company"></label>
+      <input id="company"
+             type="text"
+             class="form-control"
+             [(ngModel)]="company"
+             name="company"
+             placeholder="COMPANY">
+
+             <div class="form-group">
+      <label for="region"></label>
+      <input id="region"
+             type="text"
+             class="form-control"
+             [(ngModel)]="region"
+             name="region"
+             placeholder="REGION">
+    </div>
+
+    </div>
+
+   <button type="submit" class="btn col-sm" [disabled]="!createForm.valid">CREATE USER</button>
+
+  </form>
+
+</div>
